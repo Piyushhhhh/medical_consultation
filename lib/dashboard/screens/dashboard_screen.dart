@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:medical_consultation/dashboard/widgets/appointments.dart';
 import 'package:medical_consultation/dashboard/widgets/dashboard_title.dart';
 import 'package:medical_consultation/dashboard/widgets/search_consulation.dart';
+import 'package:medical_consultation/dashboard/widgets/top_buttons.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -22,6 +24,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
             children: const [
               DashboardTitle(),
               SearchConsultaionField(),
+              TopButtons(),
+              AppointmentDashboardWidget()
             ],
           ),
         ),

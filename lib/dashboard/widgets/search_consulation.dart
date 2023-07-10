@@ -41,7 +41,7 @@ class _SearchConsultaionFieldState extends State<SearchConsultaionField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 20),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0), color: Colors.white),
       child: Row(
