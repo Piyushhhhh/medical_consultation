@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/colors.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
+import 'package:medical_consultation/dashboard/widgets/appointment_card.dart';
 
-class AppointmentDashboardWidget extends StatefulWidget {
+class AppointmentDashboardWidget extends StatelessWidget {
   const AppointmentDashboardWidget({super.key});
 
-  @override
-  State<AppointmentDashboardWidget> createState() =>
-      _AppointmentDashboardWidgetState();
-}
-
-class _AppointmentDashboardWidgetState
-    extends State<AppointmentDashboardWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,7 +29,11 @@ class _AppointmentDashboardWidgetState
               ),
             ),
           ],
-        )
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        const AppionmentStackCard(),
       ],
     );
   }
