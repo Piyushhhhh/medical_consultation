@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/colors.dart';
+import 'package:medical_consultation/constants/strings.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
-import 'package:medical_consultation/data/recomended_doctor.dart';
+import 'package:medical_consultation/data/recomended_doctor_mock.dart';
+import 'package:medical_consultation/features/dashboard/screens/doctor_details_screen.dart';
 
 class TopDoctors extends StatelessWidget {
   const TopDoctors({super.key});
@@ -14,13 +16,13 @@ class TopDoctors extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Top Doctor's for you",
+              Strings.topDocsForYou,
               style: TextStyles.semibold22.textColor(),
             ),
             GestureDetector(
               onTap: () {},
               child: Text(
-                'See all',
+                Strings.seeAll,
                 style:
                     TextStyles.regular16.copyWith(color: AppColors.positive()),
               ),
@@ -36,7 +38,16 @@ class TopDoctors extends StatelessWidget {
           shrinkWrap: true,
           itemBuilder: (context, index) {
             return GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => DoctorDetailsScreen(
+                      doctorDetail: recomendedDoctor[index],
+                    ),
+                  ),
+                );
+              },
               child: Container(
                 padding: const EdgeInsets.all(10),
                 margin: const EdgeInsets.symmetric(
@@ -60,7 +71,7 @@ class TopDoctors extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          '${recomendedDoctor[index].specialty ?? ''} Specialist',
+                          '${recomendedDoctor[index].specialty ?? ''} ${Strings.specialist}',
                           style: TextStyles.regular16.withFadeText(),
                         ),
                         const SizedBox(
@@ -97,7 +108,7 @@ class TopDoctors extends StatelessWidget {
                               width: 5,
                             ),
                             Text(
-                              '${recomendedDoctor[index].numberOfReviews ?? ''} Reviews',
+                              '${recomendedDoctor[index].numberOfReviews ?? ''} ${Strings.reviews}',
                               style: TextStyles.regular16.textColor(),
                             ),
                           ],
@@ -109,7 +120,7 @@ class TopDoctors extends StatelessWidget {
               ),
             );
           },
-        )
+        ),
       ],
     );
   }

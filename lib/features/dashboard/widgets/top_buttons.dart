@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/colors.dart';
+import 'package:medical_consultation/constants/strings.dart';
 import 'package:medical_consultation/features/dashboard/widgets/rounded_button.dart';
 
 class TopButtons extends StatefulWidget {
@@ -16,22 +17,22 @@ class _TopButtonsState extends State<TopButtons> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         RoundedButton(
-          label: 'Hospital',
+          label: Strings.hospital,
           icons: Icons.local_convenience_store,
           color: AppColors.negative(),
         ),
         RoundedButton(
-          label: 'Consulation',
+          label: Strings.consultaion,
           icons: Icons.monitor_heart,
           color: AppColors.positive(),
         ),
         RoundedButton(
-          label: 'Recipe',
+          label: Strings.recipe,
           icons: Icons.receipt_long_rounded,
           color: AppColors.accent(),
         ),
         RoundedButton(
-          label: 'Appointment',
+          label: Strings.appointment,
           icons: Icons.app_registration_outlined,
           color: AppColors.negative(),
         ),

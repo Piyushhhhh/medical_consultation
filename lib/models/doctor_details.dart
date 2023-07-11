@@ -1,4 +1,4 @@
-class RecomendedDoctor {
+class DoctorDetail {
   int? doctorId;
   String? name;
   String? imageUrl;
@@ -7,7 +7,7 @@ class RecomendedDoctor {
   String? specialty;
   int? yearsOfExperience;
 
-  RecomendedDoctor(
+  DoctorDetail(
       {this.doctorId,
       this.name,
       this.imageUrl,
@@ -16,7 +16,7 @@ class RecomendedDoctor {
       this.specialty,
       this.yearsOfExperience});
 
-  RecomendedDoctor.fromJson(Map<String, dynamic> json) {
+  DoctorDetail.fromJson(Map<String, dynamic> json) {
     doctorId = json['doctor_id'];
     name = json['name'];
     imageUrl = json['image_url'];

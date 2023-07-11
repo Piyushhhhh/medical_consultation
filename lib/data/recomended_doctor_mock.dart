@@ -1,7 +1,7 @@
-import 'package:medical_consultation/models/recomended_doctor.dart';
+import 'package:medical_consultation/models/doctor_details.dart';
 
-final List<RecomendedDoctor> recomendedDoctor = [
-  RecomendedDoctor(
+final List<DoctorDetail> recomendedDoctor = [
+  DoctorDetail(
     doctorId: 1,
     name: "Anjela",
     imageUrl:
@@ -11,7 +11,7 @@ final List<RecomendedDoctor> recomendedDoctor = [
     yearsOfExperience: 8,
     specialty: 'Gyno',
   ),
-  RecomendedDoctor(
+  DoctorDetail(
     doctorId: 2,
     name: "Rahul",
     imageUrl:
@@ -21,7 +21,7 @@ final List<RecomendedDoctor> recomendedDoctor = [
     yearsOfExperience: 3,
     specialty: 'Kidney',
   ),
-  RecomendedDoctor(
+  DoctorDetail(
     doctorId: 3,
     name: "Sangeeta",
     imageUrl:
@@ -31,7 +31,7 @@ final List<RecomendedDoctor> recomendedDoctor = [
     yearsOfExperience: 18,
     specialty: 'Hair',
   ),
-  RecomendedDoctor(
+  DoctorDetail(
     doctorId: 4,
     name: "Ankit",
     imageUrl:
@@ -41,7 +41,7 @@ final List<RecomendedDoctor> recomendedDoctor = [
     yearsOfExperience: 5,
     specialty: 'Eyes',
   ),
-  RecomendedDoctor(
+  DoctorDetail(
     doctorId: 5,
     name: "Sujjet",
     imageUrl:
@@ -51,7 +51,7 @@ final List<RecomendedDoctor> recomendedDoctor = [
     yearsOfExperience: 9,
     specialty: 'Ears',
   ),
-  RecomendedDoctor(
+  DoctorDetail(
     doctorId: 6,
     name: "Harish",
     imageUrl:

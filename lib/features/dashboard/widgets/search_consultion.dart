@@ -5,11 +5,10 @@ class SearchConsultaionField extends StatefulWidget {
   const SearchConsultaionField({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _SearchConsultaionFieldState createState() => _SearchConsultaionFieldState();
+  SearchConsultaionFieldState createState() => SearchConsultaionFieldState();
 }
 
-class _SearchConsultaionFieldState extends State<SearchConsultaionField> {
+class SearchConsultaionFieldState extends State<SearchConsultaionField> {
   TextEditingController searchController = TextEditingController();
   bool _isSearchFieldEmpty = true;
 

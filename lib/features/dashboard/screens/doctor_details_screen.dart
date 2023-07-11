@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:medical_consultation/models/doctor_details.dart';
 
 class DoctorDetailsScreen extends StatefulWidget {
-  const DoctorDetailsScreen({super.key});
+  final DoctorDetail doctorDetail;
+  const DoctorDetailsScreen({super.key, required this.doctorDetail});
 
   @override
   State<DoctorDetailsScreen> createState() => _DoctorDetailsScreenState();
@@ -12,6 +12,6 @@ class DoctorDetailsScreen extends StatefulWidget {
 class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold();
   }
 }
