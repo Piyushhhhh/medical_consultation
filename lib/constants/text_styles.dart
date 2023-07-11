@@ -116,6 +116,10 @@ class TextStyles {
     fontSize: 24,
     fontWeight: FontWeight.w600,
   );
+  static const semibold26 = TextStyle(
+    fontSize: 26,
+    fontWeight: FontWeight.w600,
+  );
 }
 
 extension TextStyleExt on TextStyle {

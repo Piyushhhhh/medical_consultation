@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medical_consultation/constants/colors.dart';
 import 'package:medical_consultation/constants/strings.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
 import 'package:medical_consultation/features/dashboard/widgets/appointment_card.dart';
@@ -23,11 +22,8 @@ class AppointmentDashboardWidget extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {},
-              child: Text(
-                Strings.seeAll,
-                style:
-                    TextStyles.regular16.copyWith(color: AppColors.positive()),
-              ),
+              child: Text(Strings.seeAll,
+                  style: TextStyles.regular16.withPrimary()),
             ),
           ],
         ),

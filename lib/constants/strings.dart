@@ -11,4 +11,5 @@ class Strings {
   static const String consultaion = "Consulation";
   static const String recipe = "Recipe";
   static const String appointment = "Appointment";
+  static const String chat = "Chat";
 }

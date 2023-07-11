@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/colors.dart';
 import 'package:medical_consultation/constants/themes.dart';
+import 'package:medical_consultation/features/conversations/screens/conversation_screen.dart';
 import 'package:medical_consultation/features/dashboard/screens/dashboard_screen.dart';
 
 void main() {
@@ -65,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage>
           const DashboardScreen(),
           Container(),
           Container(),
-          Container(),
+          const ConversationScreen(),
           Container(),
         ],
       ),

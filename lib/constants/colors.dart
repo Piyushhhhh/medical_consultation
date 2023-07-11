@@ -5,7 +5,7 @@ class AppColors {
 
   static Color primary() => const Color(0xFF3f84ed);
   static Color accent() => const Color(0xFFF5AC6E);
-  static Color positive() => primary();
+  static Color positive() => const Color(0xFF00C287);
   static Color negative() => const Color(0xFFEA394E);
 
   static Color text({bool? lightMode}) =>

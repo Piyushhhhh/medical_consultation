@@ -21,11 +21,8 @@ class TopDoctors extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {},
-              child: Text(
-                Strings.seeAll,
-                style:
-                    TextStyles.regular16.copyWith(color: AppColors.positive()),
-              ),
+              child: Text(Strings.seeAll,
+                  style: TextStyles.regular16.withPrimary()),
             ),
           ],
         ),
