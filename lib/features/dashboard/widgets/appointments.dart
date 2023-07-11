@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/colors.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
-import 'package:medical_consultation/dashboard/widgets/appointment_card.dart';
+import 'package:medical_consultation/features/dashboard/widgets/appointment_card.dart';
 
 class AppointmentDashboardWidget extends StatelessWidget {
   const AppointmentDashboardWidget({super.key});

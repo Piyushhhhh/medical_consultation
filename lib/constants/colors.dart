@@ -11,7 +11,7 @@ class AppColors {
   static Color text({bool? lightMode}) =>
       lightMode ?? AppColors.isLightMode ? Colors.black : Colors.white;
   static Color fadeText({bool? lightMode}) => lightMode ?? AppColors.isLightMode
-      ? const Color.fromARGB(255, 213, 213, 214)
+      ? const Color.fromARGB(255, 185, 184, 184)
       : const Color(0xFFA8A8A8);
   static Color background({bool? lightMode}) =>
       lightMode ?? AppColors.isLightMode

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/colors.dart';
-import 'package:medical_consultation/dashboard/widgets/rounded_button.dart';
+import 'package:medical_consultation/features/dashboard/widgets/rounded_button.dart';
 
 class TopButtons extends StatefulWidget {
   const TopButtons({super.key});

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:medical_consultation/dashboard/widgets/appointments.dart';
-import 'package:medical_consultation/dashboard/widgets/dashboard_title.dart';
-import 'package:medical_consultation/dashboard/widgets/search_consultion.dart';
-import 'package:medical_consultation/dashboard/widgets/top_buttons.dart';
-import 'package:medical_consultation/dashboard/widgets/top_doctors.dart';
+import 'package:medical_consultation/features/dashboard/widgets/appointments.dart';
+import 'package:medical_consultation/features/dashboard/widgets/dashboard_title.dart';
+import 'package:medical_consultation/features/dashboard/widgets/search_consultion.dart';
+import 'package:medical_consultation/features/dashboard/widgets/top_buttons.dart';
+import 'package:medical_consultation/features/dashboard/widgets/top_doctors.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});

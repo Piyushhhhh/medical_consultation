@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/colors.dart';
 import 'package:medical_consultation/constants/themes.dart';
-import 'package:medical_consultation/dashboard/screens/dashboard_screen.dart';
+import 'package:medical_consultation/features/dashboard/screens/dashboard_screen.dart';
 
 void main() {
   runApp(const MyApp());
