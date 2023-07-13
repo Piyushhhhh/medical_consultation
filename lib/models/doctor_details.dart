@@ -6,6 +6,8 @@ class DoctorDetail {
   double? rating;
   String? specialty;
   int? yearsOfExperience;
+  int? noOfPatient;
+  String? doctorDescription;
 
   DoctorDetail(
       {this.doctorId,
@@ -14,7 +16,9 @@ class DoctorDetail {
       this.numberOfReviews,
       this.rating,
       this.specialty,
-      this.yearsOfExperience});
+      this.yearsOfExperience,
+      this.noOfPatient,
+      this.doctorDescription});
 
   DoctorDetail.fromJson(Map<String, dynamic> json) {
     doctorId = json['doctor_id'];
@@ -24,6 +28,8 @@ class DoctorDetail {
     rating = json['rating'];
     specialty = json['specialty'];
     yearsOfExperience = json['years_of_experience'];
+    noOfPatient = json['no_of_patient'];
+    doctorDescription = json['description'];
   }
 
   Map<String, dynamic> toJson() {
