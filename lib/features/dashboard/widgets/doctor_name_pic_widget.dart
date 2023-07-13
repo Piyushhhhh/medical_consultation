@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medical_consultation/constants/strings.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
 import 'package:medical_consultation/models/doctor_details.dart';
 
@@ -21,7 +22,7 @@ class DoctorProfilePictureAndName extends StatelessWidget {
         ),
         Center(
           child: Text(
-            "dr.${doctorDetail.name}",
+            "${Strings.shortDoctor}${doctorDetail.name}",
             style: TextStyles.semibold20.textColor(),
           ),
         ),
@@ -30,7 +31,7 @@ class DoctorProfilePictureAndName extends StatelessWidget {
         ),
         Center(
           child: Text(
-            '${doctorDetail.specialty} Specialist',
+            '${doctorDetail.specialty} ${Strings.specialist}',
             style: TextStyles.regular18.withFadeText(),
           ),
         ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/colors.dart';
-import 'package:medical_consultation/constants/text_styles.dart';
 import 'package:medical_consultation/features/dashboard/widgets/doctor_description.dart';
 import 'package:medical_consultation/features/dashboard/widgets/doctor_detail_app_bar.dart';
 import 'package:medical_consultation/features/dashboard/widgets/doctor_name_pic_widget.dart';

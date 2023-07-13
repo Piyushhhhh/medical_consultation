@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/colors.dart';
+import 'package:medical_consultation/constants/strings.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
 import 'package:medical_consultation/models/doctor_details.dart';
 
@@ -23,7 +24,7 @@ class DoctorStatsCard extends StatelessWidget {
             Column(
               children: [
                 Text(
-                  'Patients',
+                  Strings.patients,
                   style: TextStyles.regular14
                       .withColor(AppColors.containerBackground()),
                 ),
@@ -46,7 +47,7 @@ class DoctorStatsCard extends StatelessWidget {
             Column(
               children: [
                 Text(
-                  'Experience',
+                  Strings.experience,
                   style: TextStyles.regular14
                       .withColor(AppColors.containerBackground()),
                 ),
@@ -61,7 +62,7 @@ class DoctorStatsCard extends StatelessWidget {
                         style: TextStyles.semibold20.withFadeText(),
                       ),
                       TextSpan(
-                        text: "Yrs",
+                        text: Strings.shortYrs,
                         style: TextStyles.semibold12.withFadeText(),
                       ),
                     ],
@@ -79,7 +80,7 @@ class DoctorStatsCard extends StatelessWidget {
             Column(
               children: [
                 Text(
-                  'Rating',
+                  Strings.rating,
                   style: TextStyles.regular14
                       .withColor(AppColors.containerBackground()),
                 ),

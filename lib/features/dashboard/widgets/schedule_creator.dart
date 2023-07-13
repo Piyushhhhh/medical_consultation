@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medical_consultation/constants/strings.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
 
 class ScheduleCreator extends StatefulWidget {
@@ -16,7 +17,7 @@ class _ScheduleCreatorState extends State<ScheduleCreator> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Select Schedule',
+          Strings.selectSchedule,
           style: TextStyles.semibold22.textColor(),
         ),
         const SizedBox(

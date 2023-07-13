@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/colors.dart';
+import 'package:medical_consultation/constants/strings.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
 
 class DoctorDescription extends StatefulWidget {
@@ -37,7 +38,7 @@ class _DoctorDescriptionState extends State<DoctorDescription> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'About doctor',
+          Strings.aboutDoctor,
           style: TextStyles.semibold22.textColor(),
         ),
         const SizedBox(
@@ -53,7 +54,7 @@ class _DoctorDescriptionState extends State<DoctorDescription> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
                         Text(
-                          flag ? "show more" : "show less",
+                          flag ? Strings.showMore : Strings.showLess,
                           style: TextStyle(color: AppColors.accent()),
                         ),
                       ],
