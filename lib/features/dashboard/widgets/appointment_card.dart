@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/colors.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
-import 'package:medical_consultation/data/appointments_mock.dart';
+import 'package:medical_consultation/data/mock_data/appointments_mock.dart';
 
 class AppionmentStackCard extends StatelessWidget {
   const AppionmentStackCard({super.key});

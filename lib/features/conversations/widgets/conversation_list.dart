@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/colors.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
-import 'package:medical_consultation/data/conversation.dart';
+import 'package:medical_consultation/data/mock_data/conversation.dart';
 
 class ConversationListWidget extends StatefulWidget {
   const ConversationListWidget({super.key});

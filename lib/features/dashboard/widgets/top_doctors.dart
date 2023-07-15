@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/colors.dart';
 import 'package:medical_consultation/constants/strings.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
-import 'package:medical_consultation/data/recomended_doctor_mock.dart';
+import 'package:medical_consultation/data/mock_data/recomended_doctor_mock.dart';
 import 'package:medical_consultation/features/dashboard/screens/doctor_details_screen.dart';
 
 class TopDoctors extends StatelessWidget {
