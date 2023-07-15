@@ -2,7 +2,7 @@ class Conversation {
   String? fullName;
   String? lastMessage;
   int? unreadCount;
-  int? id;
+  late int id;
   String? lastMessageTime;
   bool? isOnline;
   String? imageUrl;
@@ -11,7 +11,7 @@ class Conversation {
       {this.fullName,
       this.lastMessage,
       this.unreadCount,
-      this.id,
+      required this.id,
       this.lastMessageTime,
       this.isOnline,
       this.imageUrl});

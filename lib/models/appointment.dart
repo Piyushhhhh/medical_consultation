@@ -1,5 +1,5 @@
 class UserAppointment {
-  int? appointmentId;
+  late int appointmentId;
   String? doctorName;
   String? appointmentDate;
   String? appointmentTime;
@@ -11,7 +11,7 @@ class UserAppointment {
   String? doctorImage;
 
   UserAppointment(
-      {this.appointmentId,
+      {required this.appointmentId,
       this.doctorName,
       this.appointmentDate,
       this.appointmentTime,

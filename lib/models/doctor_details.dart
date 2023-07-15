@@ -1,5 +1,5 @@
 class DoctorDetail {
-  int? doctorId;
+  late int doctorId;
   String? name;
   String? imageUrl;
   int? numberOfReviews;
@@ -10,7 +10,7 @@ class DoctorDetail {
   String? doctorDescription;
 
   DoctorDetail(
-      {this.doctorId,
+      {required this.doctorId,
       this.name,
       this.imageUrl,
       this.numberOfReviews,
