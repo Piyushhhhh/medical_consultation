@@ -41,7 +41,9 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
               const SizedBox(
                 height: 20,
               ),
-              const ScheduleCreator(),
+              ScheduleCreator(
+                  doctorAvailablity:
+                      widget.doctorDetail.doctorAvailablity ?? []),
             ],
           ),
         ),

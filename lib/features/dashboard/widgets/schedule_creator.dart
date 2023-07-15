@@ -3,9 +3,11 @@ import 'package:medical_consultation/constants/strings.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
 import 'package:medical_consultation/features/dashboard/widgets/appointment_day.dart';
 import 'package:medical_consultation/features/dashboard/widgets/appointment_time.dart';
+import 'package:medical_consultation/models/doctor_details.dart';
 
 class ScheduleCreator extends StatelessWidget {
-  const ScheduleCreator({super.key});
+  final List<DoctorAvailableDate> doctorAvailablity;
+  const ScheduleCreator({super.key, required this.doctorAvailablity});
 
   @override
   Widget build(BuildContext context) {
@@ -20,76 +22,43 @@ class ScheduleCreator extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
+
+        //date selector
         Container(
           margin: const EdgeInsets.only(bottom: 15.0, top: 10),
           height: 70,
-          child: ListView(
+          child: ListView.builder(
             padding: EdgeInsets.zero,
             scrollDirection: Axis.horizontal,
-            children: const <Widget>[
-              Appointmentday(
-                appointmentDate: "Mon",
-                appointmentDay: "15",
-              ),
-              Appointmentday(
-                appointmentDate: "Tue",
-                appointmentDay: "17",
-              ),
-              Appointmentday(
-                appointmentDate: "Wed",
-                appointmentDay: "18",
-              ),
-              Appointmentday(
-                appointmentDate: "Thu",
-                appointmentDay: "19",
-              ),
-              Appointmentday(
-                appointmentDate: "Fri",
-                appointmentDay: "21",
-              ),
-              Appointmentday(
-                appointmentDate: "Sat",
-                appointmentDay: "25",
-              ),
-              Appointmentday(
-                appointmentDate: "Sun",
-                appointmentDay: "28",
-              ),
-            ],
+            itemCount: doctorAvailablity.length,
+            itemBuilder: (context, index) {
+              return Appointmentday(
+                appointmentDate: doctorAvailablity[index].date ?? '',
+                appointmentDay: doctorAvailablity[index].day ?? '',
+              );
+            },
           ),
         ),
+
+        //time selector
         Container(
           margin: const EdgeInsets.only(
             bottom: 15.0,
             top: 10,
           ),
           height: 45,
-          child: ListView(
+          child: ListView.builder(
             padding: EdgeInsets.zero,
             scrollDirection: Axis.horizontal,
-            children: const <Widget>[
-              AppointmentTime(
-                appointmentTime: "9:00 AM",
-              ),
-              AppointmentTime(
-                appointmentTime: "10:00 AM",
-              ),
-              AppointmentTime(
-                appointmentTime: "10:30 AM",
-              ),
-              AppointmentTime(
-                appointmentTime: "11:00 AM",
-              ),
-              AppointmentTime(
-                appointmentTime: "12:00 AM",
-              ),
-              AppointmentTime(
-                appointmentTime: "1:00 PM",
-              ),
-              AppointmentTime(
-                appointmentTime: "2:00 PM",
-              ),
-            ],
+            itemCount:
+                doctorAvailablity.first.doctorAvailableTimeOfTheDay?.length,
+            itemBuilder: (BuildContext context, int index) {
+              return AppointmentTime(
+                appointmentTime: doctorAvailablity
+                        .first.doctorAvailableTimeOfTheDay?[index].time ??
+                    '',
+              );
+            },
           ),
         ),
       ],
