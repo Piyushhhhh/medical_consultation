@@ -36,7 +36,8 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                 height: 10,
               ),
               DoctorDescription(
-                  descrition: widget.doctorDetail.doctorDescription ?? ''),
+                descrition: widget.doctorDetail.doctorDescription ?? '',
+              ),
               const SizedBox(
                 height: 20,
               ),

@@ -21,8 +21,8 @@ class _DoctorDescriptionState extends State<DoctorDescription> {
   @override
   void initState() {
     super.initState();
-
-    if (widget.descrition.length > 50) {
+    // spliting the description text so if the text is long see seemore button
+    if (widget.descrition.length > 130) {
       firstHalf = widget.descrition.substring(0, 130);
       secondHalf = widget.descrition.substring(130, widget.descrition.length);
     } else {
@@ -48,7 +48,8 @@ class _DoctorDescriptionState extends State<DoctorDescription> {
             ? Text(firstHalf)
             : Column(
                 children: <Widget>[
-                  Text(flag ? ("$firstHalf...") : (firstHalf + secondHalf)),
+                  Text(flag ? ("$firstHalf...") : (firstHalf + secondHalf),
+                      style: TextStyles.regular16.withFadeText()),
                   InkWell(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
