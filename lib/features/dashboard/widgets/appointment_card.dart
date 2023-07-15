@@ -3,14 +3,9 @@ import 'package:medical_consultation/constants/colors.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
 import 'package:medical_consultation/data/appointments_mock.dart';
 
-class AppionmentStackCard extends StatefulWidget {
+class AppionmentStackCard extends StatelessWidget {
   const AppionmentStackCard({super.key});
 
-  @override
-  State<AppionmentStackCard> createState() => _AppionmentStackCardState();
-}
-
-class _AppionmentStackCardState extends State<AppionmentStackCard> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(

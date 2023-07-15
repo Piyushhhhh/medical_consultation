@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
 
-class RoundedButton extends StatefulWidget {
+class RoundedButton extends StatelessWidget {
   final String? label;
   final IconData? icons;
   final Color? color;
@@ -10,26 +10,21 @@ class RoundedButton extends StatefulWidget {
       {super.key, this.label, this.icons, this.color, this.ontap});
 
   @override
-  State<RoundedButton> createState() => _RoundedButtonState();
-}
-
-class _RoundedButtonState extends State<RoundedButton> {
-  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
           GestureDetector(
-            onTap: widget.ontap,
+            onTap: ontap,
             child: Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(78)),
               child: Icon(
-                widget.icons ?? Icons.ac_unit,
+                icons ?? Icons.ac_unit,
                 size: 30,
-                color: widget.color,
+                color: color,
               ),
             ),
           ),
@@ -37,7 +32,7 @@ class _RoundedButtonState extends State<RoundedButton> {
             height: 5,
           ),
           Text(
-            widget.label ?? '',
+            label ?? '',
             style: TextStyles.semibold14.withFadeText(),
           )
         ],

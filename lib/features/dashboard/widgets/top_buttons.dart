@@ -3,14 +3,9 @@ import 'package:medical_consultation/constants/colors.dart';
 import 'package:medical_consultation/constants/strings.dart';
 import 'package:medical_consultation/features/dashboard/widgets/rounded_button.dart';
 
-class TopButtons extends StatefulWidget {
+class TopButtons extends StatelessWidget {
   const TopButtons({super.key});
 
-  @override
-  State<TopButtons> createState() => _TopButtonsState();
-}
-
-class _TopButtonsState extends State<TopButtons> {
   @override
   Widget build(BuildContext context) {
     return Row(

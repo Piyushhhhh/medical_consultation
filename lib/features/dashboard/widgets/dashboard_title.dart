@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/strings.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
 
-class DashboardTitle extends StatefulWidget {
+class DashboardTitle extends StatelessWidget {
   const DashboardTitle({super.key});
 
-  @override
-  State<DashboardTitle> createState() => _DashboardTitleState();
-}
-
-class _DashboardTitleState extends State<DashboardTitle> {
   @override
   Widget build(BuildContext context) {
     return Row(
