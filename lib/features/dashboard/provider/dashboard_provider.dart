@@ -8,6 +8,7 @@ import 'package:medical_consultation/models/doctor_details.dart';
 class DashboardProvider extends BaseNotifier {
   List<DoctorDetail> topRecomendedDoctor = [];
   List<UserAppointment> userCurrentAppointment = [];
+  bool isDoctorDescriptionTextExtended = true;
 
   Future<void> init() async {
     try {
@@ -45,5 +46,10 @@ class DashboardProvider extends BaseNotifier {
       sendError(message: Strings.defaultErrorMessage);
       rethrow;
     }
+  }
+
+  void switchDoctorDescriptionTextExtended() {
+    isDoctorDescriptionTextExtended = !isDoctorDescriptionTextExtended;
+    notifyListeners();
   }
 }

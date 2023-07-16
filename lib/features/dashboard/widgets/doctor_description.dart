@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/colors.dart';
 import 'package:medical_consultation/constants/strings.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
+import 'package:medical_consultation/features/dashboard/provider/dashboard_provider.dart';
+import 'package:medical_consultation/features/shared/notifiers/base_provider.dart';
+import 'package:medical_consultation/features/shared/widgets/error_snack_bar.dart';
+import 'package:provider/provider.dart';
 
 class DoctorDescription extends StatefulWidget {
   final String descrition;
@@ -12,11 +16,10 @@ class DoctorDescription extends StatefulWidget {
 }
 
 class _DoctorDescriptionState extends State<DoctorDescription> {
+  DashboardProvider dashboardProvider = DashboardProvider();
   late String firstHalf;
 
   late String secondHalf;
-
-  bool flag = true;
 
   @override
   void initState() {
@@ -33,44 +36,57 @@ class _DoctorDescriptionState extends State<DoctorDescription> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          Strings.aboutDoctor,
-          style: TextStyles.semibold22.textColor(),
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        secondHalf.isEmpty
-            ? Text(firstHalf)
-            : Column(
-                children: <Widget>[
-                  Text(flag ? ("$firstHalf...") : (firstHalf + secondHalf),
-                      style: TextStyles.regular16.withFadeText()),
-                  InkWell(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Text(
-                          flag ? Strings.showMore : Strings.showLess,
-                          style: TextStyle(color: AppColors.accent()),
-                        ),
-                      ],
-                    ),
-                    onTap: () {
-                      setState(
-                        () {
-                          flag = !flag;
-                        },
-                      );
-                    },
-                  ),
-                ],
-              ),
-      ],
+    return BaseProvider.value(
+      value: dashboardProvider,
+      onError: (notifier, message) =>
+          buildErrorSnackBar(context, message: message),
+      builder: (context, child) {
+        return Consumer<DashboardProvider>(
+          builder: (context, provider, child) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  Strings.aboutDoctor,
+                  style: TextStyles.semibold22.textColor(),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                secondHalf.isEmpty
+                    ? Text(firstHalf)
+                    : Column(
+                        children: <Widget>[
+                          Text(
+                              provider.isDoctorDescriptionTextExtended
+                                  ? ("$firstHalf...")
+                                  : (firstHalf + secondHalf),
+                              style: TextStyles.regular16.withFadeText()),
+                          InkWell(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: <Widget>[
+                                Text(
+                                  provider.isDoctorDescriptionTextExtended
+                                      ? Strings.showMore
+                                      : Strings.showLess,
+                                  style: TextStyle(color: AppColors.accent()),
+                                ),
+                              ],
+                            ),
+                            onTap: () {
+                              dashboardProvider
+                                  .switchDoctorDescriptionTextExtended();
+                            },
+                          ),
+                        ],
+                      ),
+              ],
+            );
+          },
+        );
+      },
     );
   }
 }
