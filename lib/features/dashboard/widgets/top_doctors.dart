@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/colors.dart';
 import 'package:medical_consultation/constants/strings.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
-import 'package:medical_consultation/data/mock_data/recomended_doctor_mock.dart';
 import 'package:medical_consultation/features/dashboard/screens/doctor_details_screen.dart';
+import 'package:medical_consultation/models/doctor_details.dart';
 
 class TopDoctors extends StatelessWidget {
-  const TopDoctors({super.key});
+  final List<DoctorDetail> topDoctors;
+  const TopDoctors({super.key, required this.topDoctors});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class TopDoctors extends StatelessWidget {
           height: 10,
         ),
         ListView.builder(
-          itemCount: recomendedDoctor.length,
+          itemCount: topDoctors.length,
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemBuilder: (context, index) {
@@ -40,7 +41,7 @@ class TopDoctors extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (_) => DoctorDetailsScreen(
-                      doctorDetail: recomendedDoctor[index],
+                      doctorDetail: topDoctors[index],
                     ),
                   ),
                 );
@@ -58,7 +59,7 @@ class TopDoctors extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.network(
-                      recomendedDoctor[index].imageUrl ?? '',
+                      topDoctors[index].imageUrl ?? '',
                     ),
                     const SizedBox(
                       width: 10,
@@ -68,14 +69,14 @@ class TopDoctors extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          '${recomendedDoctor[index].specialty ?? ''} ${Strings.specialist}',
+                          '${topDoctors[index].specialty ?? ''} ${Strings.specialist}',
                           style: TextStyles.regular16.withFadeText(),
                         ),
                         const SizedBox(
                           height: 5,
                         ),
                         Text(
-                          'dr. ${recomendedDoctor[index].name ?? ''}',
+                          'dr. ${topDoctors[index].name ?? ''}',
                           style: TextStyles.semibold22.textColor(),
                         ),
                         const SizedBox(
@@ -91,7 +92,7 @@ class TopDoctors extends StatelessWidget {
                               width: 2,
                             ),
                             Text(
-                              (recomendedDoctor[index].rating ?? '').toString(),
+                              (topDoctors[index].rating ?? '').toString(),
                               style: TextStyles.regular16.textColor(),
                             ),
                             const SizedBox(
@@ -105,7 +106,7 @@ class TopDoctors extends StatelessWidget {
                               width: 5,
                             ),
                             Text(
-                              '${recomendedDoctor[index].numberOfReviews ?? ''} ${Strings.reviews}',
+                              '${topDoctors[index].numberOfReviews ?? ''} ${Strings.reviews}',
                               style: TextStyles.regular16.textColor(),
                             ),
                           ],

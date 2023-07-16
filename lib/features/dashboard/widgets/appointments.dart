@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/strings.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
 import 'package:medical_consultation/features/dashboard/widgets/appointment_card.dart';
+import 'package:medical_consultation/models/appointment.dart';
 
 class AppointmentDashboardWidget extends StatelessWidget {
-  const AppointmentDashboardWidget({super.key});
+  final List<UserAppointment> userAppointment;
+  const AppointmentDashboardWidget({super.key, required this.userAppointment});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,9 @@ class AppointmentDashboardWidget extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        const AppionmentStackCard(),
+        AppionmentStackCard(
+          userAppointment: userAppointment,
+        ),
       ],
     );
   }

@@ -24,4 +24,7 @@ class Strings {
   static const String showMore = "show more";
   static const String showLess = "show less";
   static const String selectSchedule = "Select Schedule";
+
+  static const String defaultErrorMessage =
+      'An error occurred while loading data';
 }

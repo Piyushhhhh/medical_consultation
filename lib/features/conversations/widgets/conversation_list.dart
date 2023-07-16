@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:medical_consultation/constants/colors.dart';
 import 'package:medical_consultation/constants/text_styles.dart';
-import 'package:medical_consultation/data/mock_data/conversation.dart';
+import 'package:medical_consultation/models/conversation.dart';
 
-class ConversationListWidget extends StatefulWidget {
-  const ConversationListWidget({super.key});
+class ConversationListWidget extends StatelessWidget {
+  final List<Conversation> userConversations;
 
-  @override
-  State<ConversationListWidget> createState() => _ConversationListWidgetState();
-}
+  const ConversationListWidget({super.key, required this.userConversations});
 
-class _ConversationListWidgetState extends State<ConversationListWidget> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
